@@ -14,7 +14,7 @@ El [Protocolo NEC](https://www.sbprojects.net/knowledge/ir/nec.php) utiliza una 
 Para obtener los 38Khz utilizo el TIMER0 en modo CTC y activo la salida OC0A en PB0. En DDRB PB0 y PB1 se configuran como salida, PB0 será una salida push-pull mientras que PB1 lo será como pull-up y esto se determina con los bits correspondientes en PORTB.  
 Los bits en PORTB para los pines PB1, PB2, PB3 y PB4 se configuran en 1 (pull-up), PB1 es una salida mientras que los restantes son entradas para los pulsadores.
 
-Al conectar el LED IR con una resistencia en serie de 330 Ohms a los pines PB0 (anodo) y PB1 (catodo), este solo emitirá los 38khz presentes en PB0 cuando haya un 0 lógico en PB1 (conducción del LED). Esto permite que una vez iniciado el TIMER0 y OC0A presente en PB0, el programa solo debe generar la trama de pulsos correpondientes al pulsador presionado.
+Al conectar el LED IR con una resistencia en serie de 330 Ohms a los pines PB0 (ánodo) y PB1 (cátodo), este solo emitirá los 38khz presentes en PB0 cuando haya un 0 lógico en PB1 (conducción del LED). Esto permite que una vez iniciado el TIMER0 y OC0A presente en PB0, el programa solo debe generar la trama de pulsos correpondientes al pulsador presionado.
 
 *Si no se presiona ningún botón (pulsador), el programa ejecuta un Power Down y el MCU se apaga hasta que se produzca una interrupción PCINT al presionar algún botón.*
 
@@ -42,3 +42,4 @@ Los pares de bytes son los siguientes:
 ### PowerOnly
 ![](https://github.com/Arturrito63/LG_IR/blob/main/Docs/LG_PowerOnly.jpg)
 
+Para los 3 casos anteriores, D2 corresponde a PB1 (cátodo) y puede verse la trama de pulsos invertidos, mientras que D3 corresponde PB0 (ánodo) y en este se puede ver la portadora de 38Khz.
