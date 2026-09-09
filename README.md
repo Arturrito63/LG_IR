@@ -53,4 +53,4 @@ Si presionamos **Bit Selector** en AVRDUDESS podemos ver los **fuses** y **lock 
 
 ![](https://github.com/Arturrito63/LG_IR/blob/main/Docs/fuses_&_look_bits.jpg)
 
-
+Antes o después de programar el MCU se debe cambiar cualquier valor presente en la casilla que marca la imagen (L) por 0xE2 y presionar "Write", de este forma ya queda funcionando a 8Mhz.
