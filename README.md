@@ -8,8 +8,8 @@
 En este proyecto utilizo un ATtiny85-20 dado que no necesito conectar más de 3 botones y un led infrarojo. En el diagrama de arriba se lo muestra alimentado con 9Vots, el cual se reduce a 5Volts mediante un regulador 78L05, pero este puede reemplazarse con un conector USB y conectarlo a una fuente o cargador de 5VDC regulados.  
 Si bien el MCU puede trabajar con tensiones mas bajas, se necesita un reloj interno a 8Mhz y esto solo es posible por encima de los 4Volts.
 
-El Protocolo NEC utiliza una portadora (carrier) de 38KHhz sobre la cual se envían los pulsos de marca (inicio), dirección (addr) y datos (data).
-[Protocolo NEC](https://www.sbprojects.net/knowledge/ir/nec.php)
+El [Protocolo NEC](https://www.sbprojects.net/knowledge/ir/nec.php) utiliza una portadora (carrier) de 38KHhz sobre la cual se envían los pulsos de marca (inicio), dirección (addr) y datos (data).
+
 
 Para obtener los 38Khz utilizo el TIMER0 en modo CTC y activo la salida OC0A en PB0. En DDRB PB0 y PB1 se configuran como salida, PB0 será una salida push-pull mientras que PB1 lo será como pull-up y esto se determina con los bits correspondientes en PORTB.  
 Los bits en PORTB para los pines PB1, PB2, PB3 y PB4 se configuran en 1 (pull-up), PB1 es una salida mientras que los restantes son entradas para los pulsadores.
